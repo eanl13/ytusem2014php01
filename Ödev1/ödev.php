@@ -23,35 +23,25 @@ if ($rastgeleyıldız = array_rand($yıldız,2)){
 
 $sırasız_dizi = array('Sun.png','Sirius.png','Vega.png','Altair.png','Pollux.png','Arcturus.png','Aldebaran.png');
 
-        function hızlı_sıralama($dizi)
-        {
-            if(count($dizi) == 0)
-                return array();
+function hızlı_sıralama($dizi)
+{
+    if(count($dizi) == 0)
+        return array();
 
-            $pivot = $dizi[0];
-            $left = $right = array();
+    $pivot = $dizi[0];
+    $left = $right = array();
 
-            for($i = 1; $i < count($dizi); $i++) {
-                if($dizi[$i] < $pivot)
-                    $left[] = $dizi[$i];
-                else
-                    $right[] = $dizi[$i];
-            }
+    for($i = 1; $i < count($dizi); $i++) {
+        if($dizi[$i] < $pivot)
+            $left[] = $dizi[$i];
+        else
+            $right[] = $dizi[$i];
+    }
 
-            return array_merge(hızlı_sıralama($left), array($pivot), hızlı_sıralama($right));
-        }
+    return array_merge(hızlı_sıralama($left), array($pivot), hızlı_sıralama($right));
+}
 
-    $sıralı = hızlı_sıralama($sırasız_dizi);
+$sıralı = hızlı_sıralama($sırasız_dizi);
 
 $rastgeleyıldız = array_rand($sıralı,2);
 echo $sıralı[$rastgeleyıldız[0]];
-
-
-
-
-
-
-
-
-
-

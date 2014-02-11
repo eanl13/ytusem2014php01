@@ -45,3 +45,5 @@ $sıralı = hızlı_sıralama($sırasız_dizi);
 
 $rastgeleyıldız = array_rand($sıralı,2);
 echo $sıralı[$rastgeleyıldız[0]];
+
+

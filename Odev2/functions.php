@@ -7,10 +7,16 @@
  */
 header('Content-Type:text/html;charset=utf-8');
 
-function stok_kontrol($ad, $adet){
-    if(is_int($ad) && is_int($adet)){
+
+$rastgeleAd=rand(1,20);
+$rastgeleAdet=rand(1,100);
+
+
+function stok_kontrol($_parametreRastgeleAd, $parametreRastgeleAdet){
+    if(is_int($_parametreRastgeleAd) && is_int($parametreRastgeleAdet)){
         echo "ım the king";
-        meyve_var($ad, $adet);
+        meyve_var($_parametreRastgeleAd, $meyveler);
+        
     }else{
         echo "hata oluştu";
         return false;
@@ -39,19 +45,13 @@ $meyveler=array(
 );
 
 
-$rastgeleAd=rand(1,20);
-$rastgeleAdet=rand(1,100);
-
-
-function meyve_var($meyveler, $değer1){
-    if($meyveler == $değer1){
-
-    }
-
-};
-
-
-
 stok_kontrol($rastgeleAd,$rastgeleAdet);
 
-
+function meyve_var($meyveler, $parametreRastgeleAd){
+    if(array_key_exists($parametreRastgeleAd, $meyveler)){
+        echo "key icinde var";
+    }else{
+        echo "key yok";
+    }
+    
+};
